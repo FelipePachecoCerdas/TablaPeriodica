@@ -1,10 +1,18 @@
 
 import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Desktop;
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.io.File;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JRootPane;
 
 /*
@@ -12,7 +20,6 @@ import javax.swing.JRootPane;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author felip
@@ -21,20 +28,22 @@ public class VentanaHistoria extends javax.swing.JFrame {
 
   JFrame ventanaPrincipal;
   Elemento elemento;
+
   /**
    * Creates new form VentanaHistoria
+   *
    * @param ventanaPrincipal
    * @param elemento
    */
   public VentanaHistoria(JFrame ventanaPrincipal, Elemento elemento) {
     this.ventanaPrincipal = ventanaPrincipal;
     this.elemento = elemento;
-    
+
     initComponents();
-    
+
     getContentPane().setBackground(Color.BLACK);
     this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-    
+
     ImageIcon imagen;
     File f = new File(elemento.getNombre() + ".gif");
     if (f.exists() && !f.isDirectory()) {
@@ -47,18 +56,36 @@ public class VentanaHistoria extends javax.swing.JFrame {
     this.informacionTexto.setText(elemento.getHistoria());
     this.informacionTexto.setLineWrap(true);
     this.informacionTexto.setWrapStyleWord(true);
-    this.nombreEtiqueta.setText(elemento.getNombre());
+    this.nombreEtiqueta.setText("History of " + elemento.getNombre());
     this.setVisible(true);
+
+    link1.setText(elemento.getLinks()[0]);
+    link1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    link1.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        if (e.getClickCount() > 0) {
+          if (Desktop.isDesktopSupported()) {
+            Desktop desktop = Desktop.getDesktop();
+            try {
+              JLabel etiqueta = (JLabel) e.getComponent();
+              URI uri = new URI(etiqueta.getText());
+              desktop.browse(uri);
+            } catch (IOException | URISyntaxException ex) {
+            }
+          }
+        }
+      }
+    });
     
-    String linksInformacion = "Links with more information about the element: \n\n";
-    for (String link: elemento.getLinks()) {
-      linksInformacion += link + "\n";
-    }
-    this.links.setText(linksInformacion);
-    this.videosLinks.setBorder(BorderFactory.createEmptyBorder());
-    this.links.setLineWrap(true);
-    this.links.setWrapStyleWord(true);
-    this.links.setEnabled(true);
+    link2.setText(elemento.getLinks()[1]);
+    link2.addMouseListener(link1.getMouseListeners()[0]);
+    link2.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    link3.setText(elemento.getLinks()[2]);
+    link3.addMouseListener(link1.getMouseListeners()[0]);
+    link3.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    //link.setLocation(40, 40);
+    
+
   }
 
   /**
@@ -75,8 +102,10 @@ public class VentanaHistoria extends javax.swing.JFrame {
     imagen = new javax.swing.JLabel();
     botonCerrar = new javax.swing.JButton();
     nombreEtiqueta = new javax.swing.JLabel();
-    videosLinks = new javax.swing.JScrollPane();
-    links = new javax.swing.JTextArea();
+    link1 = new javax.swing.JLabel();
+    link2 = new javax.swing.JLabel();
+    link3 = new javax.swing.JLabel();
+    link4 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setUndecorated(true);
@@ -108,35 +137,39 @@ public class VentanaHistoria extends javax.swing.JFrame {
     nombreEtiqueta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     nombreEtiqueta.setText("nombreElem");
 
-    links.setEditable(false);
-    links.setBackground(new java.awt.Color(0, 0, 0));
-    links.setColumns(20);
-    links.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
-    links.setRows(5);
-    links.setBorder(null);
-    links.setCaretColor(new java.awt.Color(0, 0, 0));
-    links.setDisabledTextColor(new java.awt.Color(153, 153, 153));
-    links.setEnabled(false);
-    videosLinks.setViewportView(links);
+    link1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+    link1.setText("link");
+
+    link2.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+    link2.setText("link");
+
+    link3.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+    link3.setText("link");
+
+    link4.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    link4.setText("Links with more information about the element: ");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-        .addContainerGap(28, Short.MAX_VALUE)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-          .addComponent(imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-          .addComponent(videosLinks, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+        .addContainerGap(20, Short.MAX_VALUE)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(layout.createSequentialGroup()
-            .addGap(26, 26, 26)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(57, Short.MAX_VALUE))
           .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(143, 143, 143))))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+              .addComponent(link1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(link2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(link3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(link4, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+            .addGap(26, 26, 26))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+          .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE)
+          .addComponent(nombreEtiqueta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        .addContainerGap(57, Short.MAX_VALUE))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(botonCerrar)
@@ -145,19 +178,29 @@ public class VentanaHistoria extends javax.swing.JFrame {
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addContainerGap()
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        .addGap(38, 38, 38)
+        .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+      .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
           .addGroup(layout.createSequentialGroup()
+            .addContainerGap()
             .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(33, 33, 33)
-            .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(47, 47, 47)
-            .addComponent(videosLinks, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(282, 282, 282))
           .addGroup(layout.createSequentialGroup()
-            .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(18, 18, 18)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))
-        .addContainerGap(39, Short.MAX_VALUE))
+            .addGap(38, 38, 38)
+            .addComponent(imagen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(18, 18, 18)))
+        .addComponent(link4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(6, 6, 6)
+        .addComponent(link1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(link2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(6, 6, 6)
+        .addComponent(link3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addGap(30, 30, 30))
     );
 
     pack();
@@ -174,8 +217,10 @@ public class VentanaHistoria extends javax.swing.JFrame {
   private javax.swing.JLabel imagen;
   private javax.swing.JTextArea informacionTexto;
   private javax.swing.JScrollPane jScrollPane1;
-  private javax.swing.JTextArea links;
+  private javax.swing.JLabel link1;
+  private javax.swing.JLabel link2;
+  private javax.swing.JLabel link3;
+  private javax.swing.JLabel link4;
   private javax.swing.JLabel nombreEtiqueta;
-  private javax.swing.JScrollPane videosLinks;
   // End of variables declaration//GEN-END:variables
 }

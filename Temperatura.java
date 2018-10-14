@@ -57,7 +57,7 @@ public class Temperatura {
     if (tipoGrado == ' ') {
       return "";
     }
-    return temperatura + " " + tipoGrado + "°";
+    return String.format("%.2f", temperatura) + " " + tipoGrado + "°";
   }
   
 }
