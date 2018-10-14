@@ -62,24 +62,7 @@ public class VentanaInformacion extends javax.swing.JFrame {
     }
     //ImageIcon imagen = new ImageIcon(new ImageIcon("argon.gif").getImage().getScaledInstance(515, 400, Image.SCALE_DEFAULT));
     this.imagen.setIcon(imagen);
-    String informacion = "Symbol: " + elemento.getSimbolo() + "\n";
-    informacion += "Atomic Weight: " + elemento.getPesoAtomico() + "\n";
-    informacion += "Atomic Mass: " + elemento.getMasaAtomica() + "\n";
-    informacion += "Electronic Configuration: " + elemento.getConfiguracionElectronica() + "\n";
-    informacion += "Electronegativity: " + ((elemento.getElectronegatividad() == 0) ? "Unknown": elemento.getElectronegatividad()) + "\n";
-    informacion += "Atomic Radius: " + ((elemento.getRadioAtomico() == 0) ? "Unknown": elemento.getRadioAtomico()) + "\n";
-    informacion += "Ionic Radius: " + ((elemento.getRadioIonico().equals("")) ? "Unknown": elemento.getRadioIonico()) + "\n";
-    informacion += "Van Del Waals Radius: " + ((elemento.getRadioVanDelWaals() == 0) ? "Unknown": elemento.getRadioVanDelWaals()) + "\n";
-    informacion += "Ionization Energy: " + ((elemento.getEnergiaIonizacion() == 0) ? "Unknown": elemento.getEnergiaIonizacion()) + "\n";
-    informacion += "Electronic Affinity: " + ((elemento.getAfinidadElectronica() == 0) ? "Unknown": elemento.getAfinidadElectronica())+ "\n";
-    informacion += "Oxidation States: " + ((elemento.getEstadosOxidacionStr().equals("")) ? "Unknown": elemento.getEstadosOxidacionStr()) + "\n";
-    informacion += "Standard State: " + ((elemento.getEstadoEstandar().equals("")) ? "Unknown": elemento.getEstadoEstandar()) + "\n";
-    informacion += "Type: " + ((elemento.getTipo().equals("")) ? "Unknown": elemento.getTipo()) + "\n";
-    informacion += "Melting Point: " + ((elemento.getPuntoFusion() == 0) ? "Unknown": elemento.getPuntoFusion()) + "\n";
-    informacion += "Boiling Point: " + ((elemento.getPuntoEbullicion() == 0) ? "Unknown": elemento.getPuntoEbullicion())  + "\n";
-    informacion += "Density: " + ((elemento.getDensidad() == 0) ? "Unknown": elemento.getDensidad()) + "\n";
-    informacion += "Block Name: " + ((elemento.getNombreBloque().equals("")) ? "Unknown": elemento.getNombreBloque()) + "\n";
-    informacion += "Year of Discoverment: " + ((elemento.getAnnoDescubrimiento() == -1) ? "Ancient": elemento.getAnnoDescubrimiento()) + "\n";
+    String informacion = elemento.toString();
     this.jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
     this.informacionTexto.setText(informacion);
   }

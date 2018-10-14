@@ -74,10 +74,12 @@ public class TablaPeriodica {
                 String tipo = elemento.get("bondingType").toString();
                 
                 String puntoFusionStr = elemento.get("meltingPoint").toString();
-                int puntoFusion = (puntoFusionStr.equals("")) ? 0: Integer.parseInt(puntoFusionStr); 
+                int puntoFusionInt = (puntoFusionStr.equals("")) ? 0: Integer.parseInt(puntoFusionStr); 
+                Temperatura puntoFusion = (puntoFusionInt == 0) ? new Temperatura(): new Temperatura(puntoFusionInt, 'K');
                 
                 String puntoEbullicionStr = elemento.get("boilingPoint").toString();
-                int puntoEbullicion = (puntoEbullicionStr.equals("")) ? 0: Integer.parseInt(puntoEbullicionStr); 
+                int puntoEbullicionInt = (puntoEbullicionStr.equals("")) ? 0: Integer.parseInt(puntoEbullicionStr); 
+                Temperatura puntoEbullicion = (puntoFusionInt == 0) ? new Temperatura(): new Temperatura(puntoEbullicionInt, 'K');
                 
                 String densidadStr = elemento.get("density").toString();
                 double densidad = (densidadStr.equals("")) ? 0: Double.parseDouble(densidadStr);

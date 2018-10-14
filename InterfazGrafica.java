@@ -65,6 +65,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
             //botones[i].setText(elemento.getSimbolo() + "\n" + elemento.getPesoAtomico() + elemento.)getMasaAtomica());
             //String color = elemento.getColor();
             //if (!color.equals("")) botones[i].setBackground(Color.decode("0x"+color));
+            botones[i].setToolTipText(elemento.getNombre());
             botones[i].addActionListener(boro.getActionListeners()[0]);
         }
     }
