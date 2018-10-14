@@ -63,6 +63,7 @@ public class Elemento {
 
   }
 
+  @Override
   public String toString() {
     String informacion = "Symbol: " + getSimbolo() + "\n";
     informacion += "Atomic Weight: " + getPesoAtomico() + " u\n";
@@ -79,7 +80,7 @@ public class Elemento {
     informacion += "Type: " + ((getTipo().equals("")) ? "Unknown" : getTipo()) + "\n";
     informacion += "Melting Point: " + ((getPuntoFusion().toString().equals("")) ? "Unknown" : getPuntoFusion().toString()) + "\n";
     informacion += "Melting Point: " + ((getPuntoEbullicion().toString().equals("")) ? "Unknown" : getPuntoEbullicion().toString()) + "\n";
-    informacion += "Density: " + ((getDensidad() == 0) ? "Unknown" : getDensidad()) + "\n";
+    informacion += "Density: " + ((getDensidad() == 0) ? "Unknown" : getDensidad() + " g/cm3") + "\n";
     informacion += "Block Name: " + ((getNombreBloque().equals("")) ? "Unknown" : getNombreBloque()) + "\n";
     informacion += "Year of Discoverment: " + ((getAnnoDescubrimiento() == -1) ? "Ancient" : getAnnoDescubrimiento()) + "\n";
     return informacion;

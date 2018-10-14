@@ -76,6 +76,13 @@ public class VentanaInformacion extends javax.swing.JFrame {
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
+    buttonGroup1 = new javax.swing.ButtonGroup();
+    buttonGroup2 = new javax.swing.ButtonGroup();
+    buttonGroup3 = new javax.swing.ButtonGroup();
+    buttonGroup4 = new javax.swing.ButtonGroup();
+    buttonGroup5 = new javax.swing.ButtonGroup();
+    buttonGroup6 = new javax.swing.ButtonGroup();
+    buttonGroup7 = new javax.swing.ButtonGroup();
     botonCerrar = new javax.swing.JButton();
     nombreEtiqueta = new javax.swing.JLabel();
     espectro = new javax.swing.JLabel();
@@ -83,6 +90,10 @@ public class VentanaInformacion extends javax.swing.JFrame {
     jScrollPane1 = new javax.swing.JScrollPane();
     informacionTexto = new javax.swing.JTextArea();
     jButton1 = new javax.swing.JButton();
+    kelvin = new javax.swing.JRadioButton();
+    farenheit = new javax.swing.JRadioButton();
+    celsius = new javax.swing.JRadioButton();
+    jLabel1 = new javax.swing.JLabel();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,12 +129,43 @@ public class VentanaInformacion extends javax.swing.JFrame {
     jButton1.setBackground(new java.awt.Color(0, 51, 51));
     jButton1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
     jButton1.setForeground(new java.awt.Color(204, 204, 204));
-    jButton1.setText("Information");
+    jButton1.setText("History");
     jButton1.addActionListener(new java.awt.event.ActionListener() {
       public void actionPerformed(java.awt.event.ActionEvent evt) {
         jButton1ActionPerformed(evt);
       }
     });
+
+    kelvin.setBackground(new java.awt.Color(0, 0, 0));
+    kelvin.setForeground(new java.awt.Color(204, 204, 204));
+    kelvin.setText("Kelvin");
+    kelvin.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        kelvinActionPerformed(evt);
+      }
+    });
+
+    farenheit.setBackground(new java.awt.Color(0, 0, 0));
+    farenheit.setForeground(new java.awt.Color(204, 204, 204));
+    farenheit.setText("Farenheit");
+    farenheit.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        farenheitActionPerformed(evt);
+      }
+    });
+
+    celsius.setBackground(new java.awt.Color(0, 0, 0));
+    celsius.setForeground(new java.awt.Color(204, 204, 204));
+    celsius.setText("Celsius");
+    celsius.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        celsiusActionPerformed(evt);
+      }
+    });
+
+    jLabel1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
+    jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+    jLabel1.setText("Temperature");
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -132,22 +174,27 @@ public class VentanaInformacion extends javax.swing.JFrame {
       .addGroup(layout.createSequentialGroup()
         .addGap(81, 81, 81)
         .addComponent(espectro, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
-        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-        .addComponent(jButton1)
-        .addContainerGap(12, Short.MAX_VALUE))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addContainerGap(24, Short.MAX_VALUE))
       .addGroup(layout.createSequentialGroup()
         .addGap(40, 40, 40)
         .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(33, 33, 33)
-            .addComponent(botonCerrar)
-            .addContainerGap())
-          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(27, 27, 27))))
+          .addGroup(layout.createSequentialGroup()
+            .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(botonCerrar))
+          .addGroup(layout.createSequentialGroup()
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(18, 18, 18)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(kelvin, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(farenheit, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(celsius, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(jLabel1))))
+        .addContainerGap())
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -159,15 +206,25 @@ public class VentanaInformacion extends javax.swing.JFrame {
           .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGroup(layout.createSequentialGroup()
+                .addGap(7, 7, 7)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(kelvin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(farenheit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(celsius)))))
         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
           .addComponent(espectro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(jButton1))
         .addGap(18, 18, 18))
@@ -187,13 +244,51 @@ public class VentanaInformacion extends javax.swing.JFrame {
     this.setVisible(false);
   }//GEN-LAST:event_jButton1ActionPerformed
 
+  private void farenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_farenheitActionPerformed
+    this.kelvin.setSelected(false);
+    this.celsius.setSelected(false);
+    this.elemento.getPuntoFusion().toFarenheit();
+    this.elemento.getPuntoEbullicion().toFarenheit();
+    String informacion = elemento.toString();
+    this.informacionTexto.setText(informacion);
+  }//GEN-LAST:event_farenheitActionPerformed
+
+  private void celsiusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_celsiusActionPerformed
+    this.kelvin.setSelected(false);
+    this.farenheit.setSelected(false);
+    this.elemento.getPuntoFusion().toCelsius();
+    this.elemento.getPuntoEbullicion().toCelsius();
+    String informacion = elemento.toString();
+    this.informacionTexto.setText(informacion);
+  }//GEN-LAST:event_celsiusActionPerformed
+
+  private void kelvinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelvinActionPerformed
+    this.celsius.setSelected(false);
+    this.farenheit.setSelected(false);
+    this.elemento.getPuntoFusion().toKelvin();
+    this.elemento.getPuntoEbullicion().toKelvin();
+    String informacion = elemento.toString();
+    this.informacionTexto.setText(informacion);
+  }//GEN-LAST:event_kelvinActionPerformed
+
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton botonCerrar;
+  private javax.swing.ButtonGroup buttonGroup1;
+  private javax.swing.ButtonGroup buttonGroup2;
+  private javax.swing.ButtonGroup buttonGroup3;
+  private javax.swing.ButtonGroup buttonGroup4;
+  private javax.swing.ButtonGroup buttonGroup5;
+  private javax.swing.ButtonGroup buttonGroup6;
+  private javax.swing.ButtonGroup buttonGroup7;
+  private javax.swing.JRadioButton celsius;
   private javax.swing.JLabel espectro;
+  private javax.swing.JRadioButton farenheit;
   private javax.swing.JLabel imagen;
   private javax.swing.JTextArea informacionTexto;
   private javax.swing.JButton jButton1;
+  private javax.swing.JLabel jLabel1;
   private javax.swing.JScrollPane jScrollPane1;
+  private javax.swing.JRadioButton kelvin;
   private javax.swing.JLabel nombreEtiqueta;
   // End of variables declaration//GEN-END:variables
 }
