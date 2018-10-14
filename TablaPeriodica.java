@@ -3,7 +3,6 @@
 * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quimica;
 
 import java.io.*; 
 import org.json.simple.JSONObject;
@@ -88,7 +87,16 @@ public class TablaPeriodica {
                 String annoDescubrimientoStr = elemento.get("yearDiscovered").toString();
                 int annoDescubrimiento = (annoDescubrimientoStr.equals("Ancient")) ? -1: Integer.parseInt(annoDescubrimientoStr); 
                 
-                elementos[i] = new Elemento( nombre, pesoAtomico, simbolo, masaAtomica, color, configuracionElectronica, electronegatividad, radioAtomico, radioIonico, radioVanDelWaals, energiaIonizacion, afinidadElectronica, estadosOxidacion, estadoEstandar, tipo, puntoFusion, puntoEbullicion, densidad, nombreBloque, annoDescubrimiento);
+                String historia = elemento.get("history").toString();
+                
+                JSONArray arrayLinks = (JSONArray) elemento.get("links");
+                String[] linksInfo = new String[arrayLinks.size()];
+                for (int j = 0; j < arrayLinks.size(); j++) {
+                  String link = arrayLinks.get(j).toString();
+                  linksInfo[j] = link;
+                }
+                
+                elementos[i] = new Elemento( nombre, pesoAtomico, simbolo, masaAtomica, color, configuracionElectronica, electronegatividad, radioAtomico, radioIonico, radioVanDelWaals, energiaIonizacion, afinidadElectronica, estadosOxidacion, estadoEstandar, tipo, puntoFusion, puntoEbullicion, densidad, nombreBloque, annoDescubrimiento, historia, linksInfo);
                 
             }
         } catch (FileNotFoundException e) {

@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package quimica;
 
 /**
  *
@@ -30,8 +29,10 @@ public class Elemento {
     double densidad;
     String nombreBloque;
     int annoDescubrimiento;
+    String historia;
+    String[] links;
     
-public Elemento(String pNombre, int pPesoAtomico, String pSimbolo, double pMasaAtomica, String pColor, String pConfiguracionElectronica, double pElectronegatividad, int pRadioAtomico, String pRadioIonico, int pRadioVanDelWaals, int pEnergiaIonizacion, int pAfinidadElectronica, int pEstadosOxidacion[], String pEstadoEstandar, String pTipo, int pPuntoFusion, int pPuntoEbullicion, double pDensidad, String pNombreBloque, int pAnnoDescubrimiento) {
+public Elemento(String pNombre, int pPesoAtomico, String pSimbolo, double pMasaAtomica, String pColor, String pConfiguracionElectronica, double pElectronegatividad, int pRadioAtomico, String pRadioIonico, int pRadioVanDelWaals, int pEnergiaIonizacion, int pAfinidadElectronica, int pEstadosOxidacion[], String pEstadoEstandar, String pTipo, int pPuntoFusion, int pPuntoEbullicion, double pDensidad, String pNombreBloque, int pAnnoDescubrimiento, String pHistoria, String[] pLinks) {
         setNombre(pNombre);
         setPesoAtomico(pPesoAtomico);
         setSimbolo(pSimbolo);
@@ -52,10 +53,29 @@ public Elemento(String pNombre, int pPesoAtomico, String pSimbolo, double pMasaA
         setDensidad(pDensidad);
         setNombreBloque(pNombreBloque);
         setAnnoDescubrimiento(pAnnoDescubrimiento);
-    }
+        setHistoria(pHistoria);
+        setLinks(pLinks);
+    
+  }
 
     public Elemento() {
         
+    }
+    
+    public void setLinks(String[] pLinks) {
+      links = pLinks;
+    }
+    
+    public String[] getLinks() {
+      return links;
+    }
+    
+    public void setHistoria(String pHistoria) {
+      historia = pHistoria;
+    }
+    
+    public String getHistoria() {
+      return historia;
     }
     
     public String getEstadosOxidacionStr() {

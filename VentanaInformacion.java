@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
 
 import java.awt.Color;
 import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,8 +14,8 @@ import javafx.scene.layout.Border;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.JRootPane;
-import quimica.Elemento;
 import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 
 /**
  *
@@ -23,155 +23,194 @@ import javax.swing.ImageIcon;
  */
 public class VentanaInformacion extends javax.swing.JFrame {
 
-    /**
-     * Creates new form VentanaInformacion
-     * @param elemento
-     * @throws java.net.MalformedURLException
-     */
-    public VentanaInformacion(Elemento elemento) throws MalformedURLException, IOException {
-        
-        getContentPane().setBackground(Color.BLACK);
-        //this.jButton1.setText(elemento.getNombre());
-        System.out.println(elemento.getNombre());
-        this.setUndecorated(true);
-        this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-        this.setVisible(true);
-        initComponents();
+  JFrame ventanaPrincipal;
+  Elemento elemento;
+  /**
+   * Creates new form VentanaInformacion
+   *
+   * @param ventanaPrincipal
+   * @param elemento
+   * @throws java.net.MalformedURLException
+   */
+  public VentanaInformacion(JFrame ventanaPrincipal, Elemento elemento) throws MalformedURLException, IOException {
 
-        URL url = new URL("http://chemistry.bd.psu.edu/jircitano/"+elemento.getSimbolo()+".gif");
-        try {
-            Image image = ImageIO.read(url);
-            this.espectro.setIcon(new ImageIcon(image));
-        } catch (IOException e){
-        }
-        this.nombreEtiqueta.setText(elemento.getNombre()); 
-        ImageIcon imagen = new ImageIcon("argon.gif");
-        //ImageIcon imagen = new ImageIcon(new ImageIcon("argon.gif").getImage().getScaledInstance(515, 400, Image.SCALE_DEFAULT));
-        this.imagen.setIcon(imagen);
-        String informacion = "Símbolo: " + elemento.getSimbolo() + "\n";
-        informacion += "Peso Atómico: " + elemento.getPesoAtomico() + "\n";
-        informacion += "Masa Atómica: " + elemento.getMasaAtomica() + "\n";
-        informacion += "Configuración Electrónica: " + elemento.getConfiguracionElectronica() + "\n";
-        informacion += "Peso Atómico: " + elemento.getPesoAtomico() + "\n";
-        informacion += "Electronegatividad: " + elemento.getElectronegatividad() + "\n";
-        informacion += "Radio Atómico: " + elemento.getRadioAtomico() + "\n";
-        informacion += "Radio Ionico: " + elemento.getRadioIonico() + "\n";
-        informacion += "Radio Van Del Waals: " + elemento.getRadioVanDelWaals() + "\n";
-        informacion += "Energia de Ionización: " + elemento.getEnergiaIonizacion() + "\n";
-        informacion += "Afinidad Electrónica: " + elemento.getPesoAtomico() + "\n";
-        informacion += "Estados de Oxidación: " + elemento.getEstadosOxidacionStr()+ "\n";
-        informacion += "Estado Estándar: " + elemento.getEstadoEstandar() + "\n";
-        informacion += "Tipo: " + elemento.getTipo() + "\n";
-        informacion += "Punto de Fusión: " + elemento.getPuntoFusion() + "\n";
-        informacion += "Punto de Ebullición: " + elemento.getPuntoEbullicion() + "\n";
-        informacion += "Densidad: " + elemento.getDensidad() + "\n";
-        informacion += "Nombre del Bloque: " + elemento.getNombreBloque() + "\n";
-        informacion += "Año de Descubrimiento: " + elemento.getAnnoDescubrimiento() + "\n";
-        this.jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
-        this.informacionTexto.setText(informacion);
+    this.elemento = elemento;
+    this.ventanaPrincipal = ventanaPrincipal;
+    
+    getContentPane().setBackground(Color.BLACK);
+    //this.jButton1.setText(elemento.getNombre());
+    System.out.println(elemento.getNombre());
+    this.setUndecorated(true);
+    this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+    this.setVisible(true);
+    initComponents();
+
+    URL url = new URL("http://chemistry.bd.psu.edu/jircitano/" + elemento.getSimbolo() + ".gif");
+    try {
+      Image image = ImageIO.read(url);
+      this.espectro.setIcon(new ImageIcon(image));
+    } catch (IOException e) {
     }
+    
+    this.nombreEtiqueta.setText(elemento.getNombre());
+    ImageIcon imagen;
+    File f = new File(elemento.getNombre() + ".gif");
+    if (f.exists() && !f.isDirectory()) {
+      imagen = new ImageIcon(elemento.getNombre() + ".gif");
+    } else {
+      imagen = new ImageIcon(new ImageIcon(elemento.getNombre() + ".jpg").getImage().getScaledInstance(500, 333, Image.SCALE_DEFAULT));
+    }
+    //ImageIcon imagen = new ImageIcon(new ImageIcon("argon.gif").getImage().getScaledInstance(515, 400, Image.SCALE_DEFAULT));
+    this.imagen.setIcon(imagen);
+    String informacion = "Symbol: " + elemento.getSimbolo() + "\n";
+    informacion += "Atomic Weight: " + elemento.getPesoAtomico() + "\n";
+    informacion += "Atomic Mass: " + elemento.getMasaAtomica() + "\n";
+    informacion += "Electronic Configuration: " + elemento.getConfiguracionElectronica() + "\n";
+    informacion += "Electronegativity: " + ((elemento.getElectronegatividad() == 0) ? "Unknown": elemento.getElectronegatividad()) + "\n";
+    informacion += "Atomic Radius: " + ((elemento.getRadioAtomico() == 0) ? "Unknown": elemento.getRadioAtomico()) + "\n";
+    informacion += "Ionic Radius: " + ((elemento.getRadioIonico().equals("")) ? "Unknown": elemento.getRadioIonico()) + "\n";
+    informacion += "Van Del Waals Radius: " + ((elemento.getRadioVanDelWaals() == 0) ? "Unknown": elemento.getRadioVanDelWaals()) + "\n";
+    informacion += "Ionization Energy: " + ((elemento.getEnergiaIonizacion() == 0) ? "Unknown": elemento.getEnergiaIonizacion()) + "\n";
+    informacion += "Electronic Affinity: " + ((elemento.getAfinidadElectronica() == 0) ? "Unknown": elemento.getAfinidadElectronica())+ "\n";
+    informacion += "Oxidation States: " + ((elemento.getEstadosOxidacionStr().equals("")) ? "Unknown": elemento.getEstadosOxidacionStr()) + "\n";
+    informacion += "Standard State: " + ((elemento.getEstadoEstandar().equals("")) ? "Unknown": elemento.getEstadoEstandar()) + "\n";
+    informacion += "Type: " + ((elemento.getTipo().equals("")) ? "Unknown": elemento.getTipo()) + "\n";
+    informacion += "Melting Point: " + ((elemento.getPuntoFusion() == 0) ? "Unknown": elemento.getPuntoFusion()) + "\n";
+    informacion += "Boiling Point: " + ((elemento.getPuntoEbullicion() == 0) ? "Unknown": elemento.getPuntoEbullicion())  + "\n";
+    informacion += "Density: " + ((elemento.getDensidad() == 0) ? "Unknown": elemento.getDensidad()) + "\n";
+    informacion += "Block Name: " + ((elemento.getNombreBloque().equals("")) ? "Unknown": elemento.getNombreBloque()) + "\n";
+    informacion += "Year of Discoverment: " + ((elemento.getAnnoDescubrimiento() == -1) ? "Ancient": elemento.getAnnoDescubrimiento()) + "\n";
+    this.jScrollPane1.setBorder(BorderFactory.createEmptyBorder());
+    this.informacionTexto.setText(informacion);
+  }
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+  /**
+   * This method is called from within the constructor to initialize the form.
+   * WARNING: Do NOT modify this code. The content of this method is always
+   * regenerated by the Form Editor.
+   */
+  @SuppressWarnings("unchecked")
+  // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+  private void initComponents() {
 
-        botonCerrar = new javax.swing.JButton();
-        nombreEtiqueta = new javax.swing.JLabel();
-        espectro = new javax.swing.JLabel();
-        imagen = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        informacionTexto = new javax.swing.JTextArea();
+    botonCerrar = new javax.swing.JButton();
+    nombreEtiqueta = new javax.swing.JLabel();
+    espectro = new javax.swing.JLabel();
+    imagen = new javax.swing.JLabel();
+    jScrollPane1 = new javax.swing.JScrollPane();
+    informacionTexto = new javax.swing.JTextArea();
+    jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botonCerrar.setBackground(new java.awt.Color(153, 0, 0));
-        botonCerrar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        botonCerrar.setForeground(new java.awt.Color(0, 0, 0));
-        botonCerrar.setLabel("X");
-        botonCerrar.setMargin(new java.awt.Insets(0, 0, 0, 0));
-        botonCerrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonCerrarActionPerformed(evt);
-            }
-        });
+    botonCerrar.setBackground(new java.awt.Color(153, 0, 0));
+    botonCerrar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+    botonCerrar.setForeground(new java.awt.Color(0, 0, 0));
+    botonCerrar.setLabel("X");
+    botonCerrar.setMargin(new java.awt.Insets(0, 0, 0, 0));
+    botonCerrar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        botonCerrarActionPerformed(evt);
+      }
+    });
 
-        nombreEtiqueta.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
-        nombreEtiqueta.setForeground(new java.awt.Color(255, 255, 255));
-        nombreEtiqueta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        nombreEtiqueta.setText("nombreElem");
+    nombreEtiqueta.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
+    nombreEtiqueta.setForeground(new java.awt.Color(204, 204, 204));
+    nombreEtiqueta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    nombreEtiqueta.setText("nombreElem");
 
-        espectro.setBackground(new java.awt.Color(255, 51, 51));
+    espectro.setBackground(new java.awt.Color(255, 51, 51));
 
-        informacionTexto.setEditable(false);
-        informacionTexto.setBackground(new java.awt.Color(0, 0, 0));
-        informacionTexto.setColumns(20);
-        informacionTexto.setForeground(new java.awt.Color(255, 255, 255));
-        informacionTexto.setRows(5);
-        informacionTexto.setBorder(null);
-        informacionTexto.setCaretColor(new java.awt.Color(0, 0, 0));
-        informacionTexto.setDisabledTextColor(new java.awt.Color(153, 153, 153));
-        informacionTexto.setEnabled(false);
-        jScrollPane1.setViewportView(informacionTexto);
+    informacionTexto.setEditable(false);
+    informacionTexto.setBackground(new java.awt.Color(0, 0, 0));
+    informacionTexto.setColumns(20);
+    informacionTexto.setFont(new java.awt.Font("Dialog", 0, 13)); // NOI18N
+    informacionTexto.setRows(5);
+    informacionTexto.setBorder(null);
+    informacionTexto.setCaretColor(new java.awt.Color(0, 0, 0));
+    informacionTexto.setDisabledTextColor(new java.awt.Color(153, 153, 153));
+    informacionTexto.setEnabled(false);
+    jScrollPane1.setViewportView(informacionTexto);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 79, Short.MAX_VALUE)
-                        .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonCerrar)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(espectro, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+    jButton1.setBackground(new java.awt.Color(0, 51, 51));
+    jButton1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+    jButton1.setForeground(new java.awt.Color(204, 204, 204));
+    jButton1.setText("Information");
+    jButton1.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButton1ActionPerformed(evt);
+      }
+    });
+
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(layout.createSequentialGroup()
+        .addGap(81, 81, 81)
+        .addComponent(espectro, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+        .addComponent(jButton1)
+        .addContainerGap(12, Short.MAX_VALUE))
+      .addGroup(layout.createSequentialGroup()
+        .addGap(40, 40, 40)
+        .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 515, javax.swing.GroupLayout.PREFERRED_SIZE)
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(33, 33, 33)
+            .addComponent(botonCerrar)
+            .addContainerGap())
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(27, 27, 27))))
+    );
+    layout.setVerticalGroup(
+      layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+      .addGroup(layout.createSequentialGroup()
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+          .addGroup(layout.createSequentialGroup()
+            .addGap(27, 27, 27)
+            .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
+          .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nombreEtiqueta, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(espectro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
+                .addComponent(botonCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          .addComponent(espectro, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+          .addComponent(jButton1))
+        .addGap(18, 18, 18))
+    );
 
-        pack();
-        setLocationRelativeTo(null);
-    }// </editor-fold>//GEN-END:initComponents
+    pack();
+    setLocationRelativeTo(null);
+  }// </editor-fold>//GEN-END:initComponents
 
     private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
-        this.dispose();
+      this.dispose();
+      this.ventanaPrincipal.setVisible(true);
     }//GEN-LAST:event_botonCerrarActionPerformed
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonCerrar;
-    private javax.swing.JLabel espectro;
-    private javax.swing.JLabel imagen;
-    private javax.swing.JTextArea informacionTexto;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel nombreEtiqueta;
-    // End of variables declaration//GEN-END:variables
+  private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    VentanaHistoria ventanaHistoria = new VentanaHistoria(this, elemento);
+    this.setVisible(false);
+  }//GEN-LAST:event_jButton1ActionPerformed
+
+  // Variables declaration - do not modify//GEN-BEGIN:variables
+  private javax.swing.JButton botonCerrar;
+  private javax.swing.JLabel espectro;
+  private javax.swing.JLabel imagen;
+  private javax.swing.JTextArea informacionTexto;
+  private javax.swing.JButton jButton1;
+  private javax.swing.JScrollPane jScrollPane1;
+  private javax.swing.JLabel nombreEtiqueta;
+  // End of variables declaration//GEN-END:variables
 }
