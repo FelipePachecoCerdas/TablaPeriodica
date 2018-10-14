@@ -69,7 +69,31 @@ public class InterfazGrafica extends javax.swing.JFrame {
         }
     }
     
-    public void ordenarNombre(String Modo,String tipo){
+    public void ordenarNombre(String modo,String tipo){
+        if(modo.equals("Ascendente"))
+            for(int i=0;i<vector.length;i++){
+                for(int j=0;j<vector.length && i!=j;j++){
+                    if(vector[i].compareToIgnoreCase(vector[j])<0){
+                        String aux=vector[i];
+                        vector[i]=vector[j];
+                        vector[j]=aux;
+                    }
+                }
+            }
+        else{
+            for(int i=0;i<vector.length;i++){
+                for(int j=0;j<vector.length && i!=j;j++){
+                    if(vector[i].compareToIgnoreCase(vector[j])>0){
+                        String aux=vector[i];
+                        vector[i]=vector[j];
+                        vector[j]=aux;
+                    }
+                }
+            }
+        }
+    }
+    
+    public void ordenarNumeroAtomico(){ 
         for(int i=0;i<vector.length;i++){
             for(int j=0;j<vector.length && i!=j;j++){
                 if(vector[i].compareToIgnoreCase(vector[j])<0){
