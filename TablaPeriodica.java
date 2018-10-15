@@ -14,11 +14,15 @@ import org.json.simple.parser.JSONParser;
 
 /**
  *
- * @author felip
+ * @author felipe Pacheco Cerdas
+ * @author Kendall Tenorio Chevez
  */
 public class TablaPeriodica {
     Elemento[] elementos;
-    
+    /*
+    * EL constructor de la tabla
+    *@param nada
+    */
     public TablaPeriodica() {
         JSONParser parser = new JSONParser();
         elementos = new Elemento[118];
@@ -111,7 +115,10 @@ public class TablaPeriodica {
             //e.printStackTrace(); 
         }
     }
-    
+    /*
+    *Obtiene todos los elementos que esten en el archivo tabla.json en un arreglo de Elemento
+    *@param no tiene 
+    */
     public Elemento[] getElementos() {
         return elementos;
     }
