@@ -15,14 +15,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JRootPane;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 /**
- *
- * @author felip
+ * Clase VentanaHistoria que muestra la historia de
+ * un elemento de la Tabla Periodica tal que se muestra
+ * esa historia en una JTextArea y se muestran links
+ * de videos informativos relacionados con el elemento los
+ * cuales pueden ser presionados y accedidos desde el navegador
+ * 
+ * @author Felipe Pacheco
+ * @author Kendall Tenorio
  */
 public class VentanaHistoria extends javax.swing.JFrame {
 
@@ -30,7 +31,8 @@ public class VentanaHistoria extends javax.swing.JFrame {
   Elemento elemento;
 
   /**
-   * Creates new form VentanaHistoria
+   * Crea un nueva VentanaHistoria la cual es cargada con la historia,
+   * la imagen del elemento y los links de sus videos
    *
    * @param ventanaPrincipal
    * @param elemento

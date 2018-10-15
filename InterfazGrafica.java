@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import static java.lang.Math.abs;
 
@@ -16,8 +11,14 @@ import javax.swing.JButton;
 import javax.swing.JRootPane;
 
 /**
- *
- * @author felip
+ * Clase Interfaz gráfica que se encarga de mostrar la 
+ * Tabla Periodica al usuario, consta de 118 botones con los
+ * elementos los cuales puede ser presionados para mostrar la
+ * informacion del respectivo elemento, tambien permite mostrar los 
+ * ordenamiento reorganizando los botones
+ * 
+ * @author Felipe Pacheco
+ * @author Kendall Tenorio
  */
 public class InterfazGrafica extends javax.swing.JFrame {
 
@@ -26,9 +27,10 @@ public class InterfazGrafica extends javax.swing.JFrame {
   private final ImageIcon[] imagenes;
   Elemento[] losElementos;
 
-  //private javax.swing.JButton button_array[];
   /**
-   * Creates new form InterfazGrafica
+   * Creates un objeto InterfazGrafica que tiene la
+   * tabla periodica, rellena cada boton con su respectiva
+   * imagen o gif para ser mostrado
    */
   public InterfazGrafica() {
 
@@ -78,9 +80,14 @@ public class InterfazGrafica extends javax.swing.JFrame {
     this.icons.setSelected(true);
   }
 
+  /**
+   * Ordena la tabla periodica tal que con respecto al
+   * texto de un boton coloca nueva informacion relacionada
+   * a otro elemento (daodo que fue ordenada), se encarga de
+   * poner bien los colores o imagenes en los botones segun
+   * lo que tenian antes
+   */
   public void reordenar() {
-    System.out.println("REORDENAR");
-
     for (JButton boton : botones) {
       System.out.println(boton.getText());
       Elemento elementoBoton = new Elemento();

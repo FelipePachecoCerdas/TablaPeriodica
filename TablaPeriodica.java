@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
-* To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.io.*; 
 import org.json.simple.JSONObject;
@@ -13,15 +8,21 @@ import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
 /**
- *
- * @author felipe Pacheco Cerdas
- * @author Kendall Tenorio Chevez
+ * Clase VentanaInformacion que muestra toda la informacion de
+ * un elemento junto con su imagen, su espectro y su informacion, 
+ * ademas se tiene un boton que lleva a una nueva ventana que muestra
+ * la historia de ese elemento
+ * 
+ * @author Felipe Pacheco
+ * @author Kendall Tenorio
  */
 public class TablaPeriodica {
     Elemento[] elementos;
-    /*
-    * EL constructor de la tabla
-    *@param nada
+    /**
+    * El constructor de la tabla, abre el archivo Tabla.json y recopila toda la informacion
+    * de los elementos tal que rellena el arreglo de elementos con los 118 elementos de la
+    * tabla, cada uno con respectiva informacion del json, la cual si es nula es guardada como
+    * 0 o string vacio
     */
     public TablaPeriodica() {
         JSONParser parser = new JSONParser();
@@ -115,9 +116,8 @@ public class TablaPeriodica {
             //e.printStackTrace(); 
         }
     }
-    /*
-    *Obtiene todos los elementos que esten en el archivo tabla.json en un arreglo de Elemento
-    *@param no tiene 
+    /**
+    *Obtiene todos los elementos que esten en el archivo tabla.json en un arreglo de Elementos
     */
     public Elemento[] getElementos() {
         return elementos;

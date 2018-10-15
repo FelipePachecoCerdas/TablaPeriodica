@@ -17,15 +17,22 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 /**
- *
- * @author felip
+ * Clase VentanaInformacion que muestra toda la informacion de
+ * un elemento junto con su imagen, su espectro y su informacion, 
+ * ademas se tiene un boton que lleva a una nueva ventana que muestra
+ * la historia de ese elemento
+ * 
+ * @author Felipe Pacheco
+ * @author Kendall Tenorio
  */
 public class VentanaInformacion extends javax.swing.JFrame {
 
   JFrame ventanaPrincipal;
   Elemento elemento;
   /**
-   * Creates new form VentanaInformacion
+   * Crea un nueva VentanaInformacion que recibe un ventanaPrincipal(para
+   * poder cerrarse) y un elemento de la tabla de cual se extrae toda la informacion
+   * para se mostrar, carga el espectro de internet y la imagen de los archivos
    *
    * @param ventanaPrincipal
    * @param elemento
