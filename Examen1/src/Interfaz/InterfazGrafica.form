@@ -1,140 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
-  <NonVisualComponents>
-    <Component class="javax.swing.JButton" name="jButton69">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton70">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton71">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton72">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton73">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton74">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton75">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton76">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jButton14"/>
-      </Properties>
-    </Component>
-    <Container class="javax.swing.JFrame" name="jFrame1">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JFrame" name="jFrame2">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JFrame" name="jFrame3">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JFrame" name="jFrame4">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Container class="javax.swing.JFrame" name="jFrame5">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-    <Component class="javax.swing.JSeparator" name="jSeparator1">
-    </Component>
-    <Container class="javax.swing.JFrame" name="jFrame6">
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-    </Container>
-  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -204,59 +70,51 @@
                                               <Component id="tulio" min="-2" pref="48" max="-2" attributes="0"/>
                                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                               <Component id="iterbio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="lutecio" min="-2" pref="48" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                                              <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                                              <Component id="cbbOrdenarM" min="-2" pref="114" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="actinio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="torio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="0" attributes="0">
-                                                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                                                      <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="protactinio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="uranio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="neptunio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="plutonio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="americio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="curio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="berkelio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="californio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="einstenio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="fermio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="mendelevio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                                      <Component id="nobelio" min="-2" pref="48" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="cbbOrdenarM" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="actinio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="torio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="protactinio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="uranio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="neptunio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="plutonio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="americio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="curio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="berkelio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="californio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="einstenio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="fermio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="mendelevio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="nobelio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                              <Component id="lawrencio" min="-2" pref="48" max="-2" attributes="0"/>
                                           </Group>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lutecio" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="lawrencio" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="cbbOrdenarT" min="-2" pref="123" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -547,7 +405,7 @@
                               <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="35" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -663,29 +521,24 @@
                                       <Component id="selenio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="rubidio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="estroncio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="itrio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="circonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="niobio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="molibdeno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="tecnecio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="rutenio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="rodio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="paladio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="plata" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="cadmio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="indio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="estanno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="antimonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="telurio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jLabel23" min="-2" pref="19" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="rubidio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="estroncio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="itrio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="circonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="niobio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="molibdeno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="tecnecio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="rutenio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="rodio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="paladio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="plata" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="cadmio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="indio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="estanno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="antimonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="telurio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="jLabel23" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -732,6 +585,7 @@
                               <Component id="plomo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="bismuto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="polonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jLabel25" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
                           </Group>
                           <Component id="astato" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
@@ -754,15 +608,10 @@
                               <Component id="flerovio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="moscovium" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                               <Component id="livermorio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jLabel24" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
                           </Group>
                           <Component id="tennessine" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="jLabel25" min="-2" pref="19" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel24" min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="radon" min="-2" pref="36" max="-2" attributes="0"/>
@@ -772,66 +621,59 @@
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                              <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lantano" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="cerio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="praseodimio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="neodimio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="prometio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="samario" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="europio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="gadolinio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="terbio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="disprosio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="holmio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="erbio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="tulio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="iterbio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="actinio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="torio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="protactinio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="uranio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="neptunio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="plutonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="americio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="curio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="berkelio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="californio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="einstenio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="fermio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="mendelevio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="nobelio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                      <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="lutecio" min="-2" pref="36" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Component id="lawrencio" min="-2" pref="36" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lantano" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="cerio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="praseodimio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="neodimio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="prometio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="samario" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="europio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="gadolinio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="terbio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="disprosio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="holmio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="erbio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="tulio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="iterbio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="lutecio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="cbbOrdenarT" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="cbbOrdenarM" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="actinio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="torio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                      <Component id="protactinio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="uranio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="neptunio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="plutonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="americio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="curio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="berkelio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="californio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="einstenio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="fermio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="mendelevio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="nobelio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="lawrencio" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbbOrdenarT" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbbOrdenarM" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -3343,6 +3185,9 @@
           </StringArray>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cbbOrdenarTActionPerformed"/>
+      </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
