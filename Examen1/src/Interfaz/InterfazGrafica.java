@@ -22,7 +22,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
     TablaPeriodica tablaPeriodica;
     private final javax.swing.JButton [] botones;
     String[] vector;
-    Elemento[] LosElementos;
+    Elemento[] losElementos;
     //private javax.swing.JButton button_array[];
 
     /**
@@ -69,87 +69,168 @@ public class InterfazGrafica extends javax.swing.JFrame {
             botones[i].addActionListener(boro.getActionListeners()[0]);
         }
     }
-    
-    public void ordenarNombre(String modo,String tipo){
-        if(modo.equals("Ascendente"))
-            for(int i=0;i<vector.length;i++){
-                for(int j=0;j<vector.length && i!=j;j++){
-                    if(vector[i].compareToIgnoreCase(vector[j])<0){
-                        String aux=vector[i];
-                        vector[i]=vector[j];
-                        vector[j]=aux;
+    /*
+    *ordena los botones de acuerdo al nombre que tiene ya sea ascendente o descendente
+    *@param modo(Ascendente o descendente)
+    */
+    public void ordenarNombre(String modo){
+        if(modo.equals("Ascendente")){
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getNombre().compareToIgnoreCase(losElementos[j].getNombre())<0){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
                     }
                 }
             }
-        else{
-            for(int i=0;i<vector.length;i++){
-                for(int j=0;j<vector.length && i!=j;j++){
-                    if(vector[i].compareToIgnoreCase(vector[j])>0){
-                        String aux=vector[i];
-                        vector[i]=vector[j];
-                        vector[j]=aux;
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
+            }
+        }else{
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getNombre().compareToIgnoreCase(losElementos[j].getNombre())>0){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
                     }
                 }
             }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
+            }
         }
     }
-    
-    public void ordenarSimbolo(String modo,String tipo){
-        if(modo.equals("Ascendente"))
-            for(int i=0;i<vector.length;i++){
-                for(int j=0;j<vector.length && i!=j;j++){
-                    if(vector[i].compareToIgnoreCase(vector[j])<0){
-                        String aux=vector[i];
-                        vector[i]=vector[j];
-                        vector[j]=aux;
+    /*
+    *ordena los botones de acuerdo al Simbolo del elemento que tiene ya sea ascendente o descendente
+    *@param modo(Ascendente o Descendente)
+    */
+    public void ordenarSimbolo(String modo){
+        if(modo.equals("Ascendente")){
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getSimbolo().compareToIgnoreCase(losElementos[j].getSimbolo())<0){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
                     }
                 }
             }
-        else{
-            for(int i=0;i<vector.length;i++){
-                for(int j=0;j<vector.length && i!=j;j++){
-                    if(vector[i].compareToIgnoreCase(vector[j])>0){
-                        String aux=vector[i];
-                        vector[i]=vector[j];
-                        vector[j]=aux;
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
+            }
+        }else{
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getSimbolo().compareToIgnoreCase(losElementos[j].getSimbolo())>0){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
                     }
                 }
             }
-        }
-    }
-    
-    public void ordenarNumeroAtomico(){ 
-        for(int i=0;i<vector.length;i++){
-            for(int j=0;j<vector.length && i!=j;j++){
-                if(vector[i].compareToIgnoreCase(vector[j])<0){
-                    String aux=vector[i];
-                    vector[i]=vector[j];
-                    vector[j]=aux;
-                }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
             }
         }
     }
-    
-    public void ordenarPuntoFusion(){
-        for(int i=0;i<vector.length;i++){
-            for(int j=0;j<vector.length && i!=j;j++){
-                if(vector[i].compareToIgnoreCase(vector[j])<0){
-                    String aux=vector[i];
-                    vector[i]=vector[j];
-                    vector[j]=aux;
+    /*
+    *ordena los botones de acuerdo al numero atomico del elemento que tiene ya sea ascendente o descendente
+    *@param modo(Ascendente o Descendente)
+    */
+    public void ordenarNumeroAtomico(String modo){ 
+        if(modo.equals("Ascendente")){
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getPesoAtomico()<losElementos[j].getPesoAtomico()){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
+                    }
                 }
+            }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
+            }
+        }else{
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getPesoAtomico()>losElementos[j].getPesoAtomico()){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
+                    }
+                }
+            }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
             }
         }
     }
-    
-    public void ordenarPuntoEmbullicion(){
-        for(int i=0;i<vector.length;i++){
-            for(int j=0;j<vector.length && i!=j;j++){
-                if(vector[i].compareToIgnoreCase(vector[j])<0){
-                    String aux=vector[i];
-                    vector[i]=vector[j];
-                    vector[j]=aux;
+    /*
+    *ordena los botones de acuerdo al punto de Fusion del elemento que tiene ya sea ascendente o descendente
+    *@param modo(Ascendente o Descendente)
+    */
+    public void ordenarPuntoFusion(String modo){
+        if(modo.equals("Ascendente")){
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getPuntoFusion().getTemperatura()<losElementos[j].getPuntoFusion().getTemperatura()){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
+                    }
                 }
+            }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
+            }
+        }else{
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getPuntoFusion().getTemperatura()>losElementos[j].getPuntoFusion().getTemperatura()){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
+                    }
+                }
+            }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
+            }
+        }
+    }
+    /*
+    *ordena los botones de acuerdo al punto de Embullicion del elemento que tiene ya sea ascendente o descendente
+    *@param modo(Ascendente o Descendente)
+    */
+    public void ordenarPuntoEmbullicion(String modo){
+        if(modo.equals("Ascendente")){
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getPuntoEbullicion().getTemperatura()<losElementos[j].getPuntoEbullicion().getTemperatura()){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
+                    }
+                }
+            }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
+            }
+        }else{
+            for(int i=0;i<losElementos.length;i++){
+                for(int j=0;j<losElementos.length && i!=j;j++){
+                    if(losElementos[i].getPuntoEbullicion().getTemperatura()>losElementos[j].getPuntoEbullicion().getTemperatura()){
+                        Elemento aux=losElementos[i];
+                        losElementos[i]=losElementos[j];
+                        losElementos[j]=aux;
+                    }
+                }
+            }
+            for(int i=0;i<botones.length;i++){
+                botones[i].setText(losElementos[i].getSimbolo());
             }
         }
     }
@@ -2092,16 +2173,17 @@ public class InterfazGrafica extends javax.swing.JFrame {
         Object obj=evt.getSource();
         Object obj2=evt.getSource();
         if(obj==cbbOrdenarM || obj2==cbbOrdenarT){
+            String mod=(String) cbbOrdenarM.getSelectedItem();
             if(cbbOrdenarM.getSelectedItem().equals("Número Atómico"))
-                ordenarNumeroAtomico();
+                ordenarNumeroAtomico(mod);
             else if(cbbOrdenarM.getSelectedItem().equals("Simbolo"))
-                ordenarSimbolo("","");
+                ordenarSimbolo(mod);
             else if(cbbOrdenarM.getSelectedItem().equals("Nombre"))
-                ordenarNombre("","");
+                ordenarNombre(mod);
             else if(cbbOrdenarM.getSelectedItem().equals("Punto de Fúsion"))
-                ordenarPuntoFusion();
+                ordenarPuntoFusion(mod);
             else
-                System.out.println("");
+                ordenarPuntoEmbullicion(mod);
                 
         }
     }//GEN-LAST:event_cbbOrdenarTActionPerformed
