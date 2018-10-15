@@ -14,68 +14,72 @@ import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JRootPane;
+
 /**
  *
  * @author felip
  */
 public class InterfazGrafica extends javax.swing.JFrame {
-    
-    TablaPeriodica tablaPeriodica;
-    private final javax.swing.JButton [] botones;
-    
-    //private javax.swing.JButton button_array[];
 
-    /**
-     * Creates new form InterfazGrafica
-     */
-    public InterfazGrafica() {
-        
-        this.setUndecorated(true);
-        this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
-        //this.setLocation(200, 150);
-        initComponents();
-        getContentPane().setBackground(Color.BLACK);
-        tablaPeriodica = new TablaPeriodica();
-        botones = new javax.swing.JButton[] {hidrogeno, helio, litio, berilio, boro, carbono, nitrogeno, oxigeno, fluor, neon, sodio, magnesio, aluminio, silicio, fosforo, azufre, cloro, argon, potasio, calcio, escandio, titanio, vanadio, cromo, manganeso, hierro, cobalto, niquel, cobre, zinc, galio, germanio, arsenico, selenio, bromo, krypton, rubidio, estroncio, itrio, circonio, niobio, molibdeno, tecnecio, rutenio, rodio, paladio, plata, cadmio, indio, estanno, antimonio, telurio, yodo, xenon, cesio, bario, lantano, cerio, praseodimio, neodimio, prometio, samario, europio, gadolinio, terbio, disprosio, holmio, erbio, tulio, iterbio, lutecio, hafnio, tantalio, wolframio, renio, osmio, iridio, platino, oro, mercurio, talio, plomo, bismuto, polonio, astato, radon, francio, radio, actinio, torio, protactinio, uranio, neptunio, plutonio, americio, curio, berkelio, californio, einstenio, fermio, mendelevio, nobelio, lawrencio, rutherfordio, dubnio, seaborgio, bohrio, hassio, meitnerio, darmstadio, roentgenio, copernicio, nihonium, flerovio, moscovium, livermorio, tennessine, oganesson};
-        this.lantano_salto.setBackground(Color.BLACK);
-        this.actinio_salto.setBackground(Color.BLACK);
-        //hidrogeno.addActionListener(boro.getActionListeners()[0]);
-        //botones[0].setBackground(Color.decode("0xA3FFC7"));
-        
-        for (int i = 0; i < 118; i++) { 
-            Elemento elemento =  tablaPeriodica.getElementos()[i];
-            ImageIcon imagen;
-            File f = new File(elemento.getNombre()+".gif");
-            if(f.exists() && !f.isDirectory()) { 
-              imagen = new ImageIcon(new ImageIcon(elemento.getNombre()+".gif").getImage().getScaledInstance(48, 36, Image.SCALE_DEFAULT));
-            } else {
-              imagen = new ImageIcon(new ImageIcon(elemento.getNombre()+".jpg").getImage().getScaledInstance(48, 36, Image.SCALE_DEFAULT));
-            }
-            botones[i].setIcon(imagen);
-            botones[i].setName(elemento.getSimbolo());
-            String espacios = "";
-            for (int j = 0; j < (10 + abs((String.valueOf(elemento.getPesoAtomico()) + elemento.getSimbolo()).length() - 5)); j++) {
-                espacios += "&nbsp;";
-            }
-            
-            
-            botones[i].setText("<html><left><p>"+elemento.getSimbolo() + espacios + elemento.getPesoAtomico() + "</p><br>"
-                 + "<left><p>"+elemento.getMasaAtomica() + "</p></html>");
-            
-            //botones[i].setText(elemento.getSimbolo() + "\n" + elemento.getPesoAtomico() + elemento.)getMasaAtomica());
-            //String color = elemento.getColor();
-            //if (!color.equals("")) botones[i].setBackground(Color.decode("0x"+color));
-            botones[i].setToolTipText(elemento.getNombre());
-            botones[i].addActionListener(boro.getActionListeners()[0]);
-        }
+  TablaPeriodica tablaPeriodica;
+  private final javax.swing.JButton[] botones;
+  private ImageIcon[] imagenes;
+  
+  //private javax.swing.JButton button_array[];
+  /**
+   * Creates new form InterfazGrafica
+   */
+  public InterfazGrafica() {
+
+    this.setUndecorated(true);
+    this.getRootPane().setWindowDecorationStyle(JRootPane.NONE);
+    imagenes = new ImageIcon[118];
+    //this.setLocation(200, 150);
+    initComponents();
+    getContentPane().setBackground(Color.BLACK);
+    tablaPeriodica = new TablaPeriodica();
+    botones = new javax.swing.JButton[]{hidrogeno, helio, litio, berilio, boro, carbono, nitrogeno, oxigeno, fluor, neon, sodio, magnesio, aluminio, silicio, fosforo, azufre, cloro, argon, potasio, calcio, escandio, titanio, vanadio, cromo, manganeso, hierro, cobalto, niquel, cobre, zinc, galio, germanio, arsenico, selenio, bromo, krypton, rubidio, estroncio, itrio, circonio, niobio, molibdeno, tecnecio, rutenio, rodio, paladio, plata, cadmio, indio, estanno, antimonio, telurio, yodo, xenon, cesio, bario, lantano, cerio, praseodimio, neodimio, prometio, samario, europio, gadolinio, terbio, disprosio, holmio, erbio, tulio, iterbio, lutecio, hafnio, tantalio, wolframio, renio, osmio, iridio, platino, oro, mercurio, talio, plomo, bismuto, polonio, astato, radon, francio, radio, actinio, torio, protactinio, uranio, neptunio, plutonio, americio, curio, berkelio, californio, einstenio, fermio, mendelevio, nobelio, lawrencio, rutherfordio, dubnio, seaborgio, bohrio, hassio, meitnerio, darmstadio, roentgenio, copernicio, nihonium, flerovio, moscovium, livermorio, tennessine, oganesson};
+    this.lantano_salto.setBackground(Color.BLACK);
+    this.actinio_salto.setBackground(Color.BLACK);
+    //hidrogeno.addActionListener(boro.getActionListeners()[0]);
+    //botones[0].setBackground(Color.decode("0xA3FFC7"));
+
+    for (int i = 0; i < 118; i++) {
+      Elemento elemento = tablaPeriodica.getElementos()[i];
+      ImageIcon imagen;
+      File f = new File(elemento.getNombre() + ".gif");
+      if (f.exists() && !f.isDirectory()) {
+        imagen = new ImageIcon(new ImageIcon(elemento.getNombre() + ".gif").getImage().getScaledInstance(48, 36, Image.SCALE_DEFAULT));
+      } else {
+        imagen = new ImageIcon(new ImageIcon(elemento.getNombre() + ".jpg").getImage().getScaledInstance(48, 36, Image.SCALE_DEFAULT));
+      }
+      botones[i].setIcon(imagen);
+      imagenes[i] = imagen;
+      botones[i].setName(elemento.getSimbolo());
+      String espacios = "";
+      for (int j = 0; j < (10 + abs((String.valueOf(elemento.getPesoAtomico()) + elemento.getSimbolo()).length() - 5)); j++) {
+        espacios += "&nbsp;";
+      }
+
+      botones[i].setText("<html><left><p>" + elemento.getSimbolo() + espacios + elemento.getPesoAtomico() + "</p><br>"
+              + "<left><p>" + elemento.getMasaAtomica() + "</p></html>");
+
+      //botones[i].setText(elemento.getSimbolo() + "\n" + elemento.getPesoAtomico() + elemento.)getMasaAtomica());
+      //String color = elemento.getColor();
+      //if (!color.equals("")) botones[i].setBackground(Color.decode("0x"+color));
+      botones[i].setToolTipText(elemento.getNombre());
+      botones[i].addActionListener(boro.getActionListeners()[0]);
     }
-    
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
-    @SuppressWarnings("unchecked")
+
+    this.icons.setSelected(true);
+  }
+
+  /**
+   * This method is called from within the constructor to initialize the form.
+   * WARNING: Do NOT modify this code. The content of this method is always
+   * regenerated by the Form Editor.
+   */
+  @SuppressWarnings("unchecked")
   // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
   private void initComponents() {
 
@@ -241,9 +245,11 @@ public class InterfazGrafica extends javax.swing.JFrame {
     jLabel24 = new javax.swing.JLabel();
     jLabel25 = new javax.swing.JLabel();
     jLabel26 = new javax.swing.JLabel();
-    jLabel27 = new javax.swing.JLabel();
     jLabel28 = new javax.swing.JLabel();
     jLabel29 = new javax.swing.JLabel();
+    icons = new javax.swing.JRadioButton();
+    cpkColoring = new javax.swing.JRadioButton();
+    temperature = new javax.swing.JRadioButton();
 
     jButton69.setText("jButton14");
 
@@ -1382,15 +1388,36 @@ public class InterfazGrafica extends javax.swing.JFrame {
     jLabel26.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
     jLabel26.setText("Lantanides");
 
-    jLabel27.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
-    jLabel27.setText("Actinides");
-
     jLabel28.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
     jLabel28.setText("Actinides");
 
     jLabel29.setFont(new java.awt.Font("Dialog", 0, 48)); // NOI18N
     jLabel29.setForeground(new java.awt.Color(204, 204, 204));
     jLabel29.setText("Periodic Table of the Elements");
+
+    icons.setBackground(new java.awt.Color(0, 0, 0));
+    icons.setText("Icons");
+    icons.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        iconsActionPerformed(evt);
+      }
+    });
+
+    cpkColoring.setBackground(new java.awt.Color(0, 0, 0));
+    cpkColoring.setText("CPK Coloring");
+    cpkColoring.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        cpkColoringActionPerformed(evt);
+      }
+    });
+
+    temperature.setBackground(new java.awt.Color(0, 0, 0));
+    temperature.setText("Temperature");
+    temperature.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        temperatureActionPerformed(evt);
+      }
+    });
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
@@ -1454,32 +1481,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
                     .addComponent(escandio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(layout.createSequentialGroup()
-                    .addComponent(titanio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(vanadio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(cromo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(manganeso, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(hierro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(cobalto, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(niquel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(cobre, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(zinc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(galio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(germanio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(arsenico, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(selenio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGroup(layout.createSequentialGroup()
                     .addGap(17, 17, 17)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(27, 27, 27)
@@ -1505,7 +1506,39 @@ public class InterfazGrafica extends javax.swing.JFrame {
                     .addGap(26, 26, 26)
                     .addComponent(jLabel16)
                     .addGap(18, 18, 18)
-                    .addComponent(jLabel17)))))
+                    .addComponent(jLabel17))
+                  .addGroup(layout.createSequentialGroup()
+                    .addComponent(titanio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(vanadio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(cromo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(manganeso, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(hierro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(cobalto, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(niquel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(cobre, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(zinc, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(galio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(germanio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(arsenico, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)
+                    .addComponent(selenio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+              .addGroup(layout.createSequentialGroup()
+                .addGap(116, 116, 116)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(cpkColoring)
+                  .addComponent(temperature)
+                  .addComponent(icons))))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addComponent(bromo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addComponent(yodo, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1549,10 +1582,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
             .addGap(0, 0, 0)
             .addComponent(astato, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(layout.createSequentialGroup()
-            .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-            .addComponent(hidrogeno, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addGroup(layout.createSequentialGroup()
             .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(francio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1592,16 +1621,29 @@ public class InterfazGrafica extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
               .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
               .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                  .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(layout.createSequentialGroup()
-                    .addComponent(litio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(berilio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(480, 480, 480)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(hidrogeno, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addGroup(layout.createSequentialGroup()
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                      .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                      .addGroup(layout.createSequentialGroup()
+                        .addComponent(litio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(berilio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                      .addGroup(layout.createSequentialGroup()
+                        .addComponent(sodio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(magnesio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(layout.createSequentialGroup()
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(boro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, 0)
                     .addComponent(carbono, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1610,10 +1652,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
                     .addGap(0, 0, 0)
                     .addComponent(oxigeno, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addGroup(layout.createSequentialGroup()
-                    .addComponent(sodio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, 0)
-                    .addComponent(magnesio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(480, 480, 480)
+                    .addGap(312, 312, 312)
                     .addComponent(aluminio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, 0)
                     .addComponent(silicio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1627,25 +1666,19 @@ public class InterfazGrafica extends javax.swing.JFrame {
               .addComponent(cloro, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(radon, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-              .addComponent(oganesson, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGap(48, 48, 48)))
-          .addGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(helio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(neon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(argon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(helio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                  .addComponent(krypton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addComponent(xenon, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(neon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(argon, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
-              .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel18)))
-            .addGap(48, 48, 48)))
-        .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(radon, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(oganesson, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addComponent(krypton, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addComponent(xenon, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+          .addGroup(layout.createSequentialGroup()
+            .addGap(14, 14, 14)
+            .addComponent(jLabel18)))
+        .addGap(48, 48, 48))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(botonCerrar)
@@ -1718,11 +1751,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
           .addComponent(lutecio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
           .addComponent(lawrencio, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-          .addGap(0, 0, Short.MAX_VALUE)
-          .addComponent(jLabel27)
-          .addGap(0, 0, Short.MAX_VALUE)))
     );
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1755,23 +1783,30 @@ public class InterfazGrafica extends javax.swing.JFrame {
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(layout.createSequentialGroup()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(hidrogeno, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(hidrogeno, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                  .addComponent(fluor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(boro, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(carbono, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(nitrogeno, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                  .addComponent(oxigeno, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(cloro, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
               .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(layout.createSequentialGroup()
-                    .addGap(12, 12, 12)
+                    .addGap(48, 48, 48)
                     .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(litio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(berilio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boro, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(carbono, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nitrogeno, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(oxigeno, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                  .addGroup(layout.createSequentialGroup()
+                    .addGap(36, 36, 36)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                      .addComponent(litio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                      .addComponent(berilio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                   .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sodio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1781,13 +1816,15 @@ public class InterfazGrafica extends javax.swing.JFrame {
                     .addComponent(fosforo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(azufre, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                   .addGroup(layout.createSequentialGroup()
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))))
-              .addGroup(layout.createSequentialGroup()
-                .addComponent(fluor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(cloro, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addGap(0, 0, 0)
+              .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(icons)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cpkColoring)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(temperature)
+                .addGap(18, 18, 18)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1835,7 +1872,54 @@ public class InterfazGrafica extends javax.swing.JFrame {
               .addGroup(layout.createSequentialGroup()
                 .addComponent(bromo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(yodo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addComponent(yodo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+              .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cesio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lantano_salto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hafnio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tantalio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(wolframio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(renio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(osmio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(iridio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(platino, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oro, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mercurio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(talio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(plomo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bismuto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(polonio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(astato, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(francio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(actinio_salto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rutherfordio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dubnio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seaborgio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bohrio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(hassio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(meitnerio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(darmstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(roentgenio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(copernicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nihonium, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(flerovio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(moscovium, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(livermorio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                  .addComponent(tennessine, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+              .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))))
           .addGroup(layout.createSequentialGroup()
             .addComponent(helio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, 0)
@@ -1847,55 +1931,8 @@ public class InterfazGrafica extends javax.swing.JFrame {
               .addGroup(layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(xenon, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addComponent(krypton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-        .addGap(0, 0, Short.MAX_VALUE)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-          .addGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(cesio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(bario, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(lantano_salto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(hafnio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(tantalio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(wolframio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(renio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(osmio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(iridio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(platino, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(oro, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(mercurio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(talio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(plomo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(bismuto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(polonio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addComponent(astato, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(0, 0, 0)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(francio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(radio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(actinio_salto, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(rutherfordio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(dubnio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(seaborgio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(bohrio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(hassio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(meitnerio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(darmstadio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(roentgenio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(copernicio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(nihonium, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(flerovio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(moscovium, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(livermorio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-              .addComponent(tennessine, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-          .addGroup(layout.createSequentialGroup()
-            .addGap(10, 10, 10)
-            .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGap(18, 18, 18)
-            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-          .addGroup(layout.createSequentialGroup()
+              .addComponent(krypton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(0, 0, Short.MAX_VALUE)
             .addComponent(radon, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGap(0, 0, 0)
             .addComponent(oganesson, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1945,11 +1982,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
             .addGap(0, 0, 0)
             .addComponent(lawrencio, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
         .addGap(36, 36, 36))
-      .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(layout.createSequentialGroup()
-          .addGap(0, 0, Short.MAX_VALUE)
-          .addComponent(jLabel27)
-          .addGap(0, 0, Short.MAX_VALUE)))
     );
 
     pack();
@@ -1957,142 +1989,203 @@ public class InterfazGrafica extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
     private void kryptonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kryptonActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_kryptonActionPerformed
 
     private void hidrogenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hidrogenoActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_hidrogenoActionPerformed
 
     private void helioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_helioActionPerformed
 
     private void litioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_litioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_litioActionPerformed
 
     private void neonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neonActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_neonActionPerformed
 
     private void francioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_francioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_francioActionPerformed
 
     private void tantalioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tantalioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_tantalioActionPerformed
 
     private void molibdenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_molibdenoActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_molibdenoActionPerformed
 
     private void bohrioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bohrioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_bohrioActionPerformed
 
     private void hierroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hierroActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_hierroActionPerformed
 
     private void osmioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_osmioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_osmioActionPerformed
 
     private void hassioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hassioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_hassioActionPerformed
 
     private void meitnerioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meitnerioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_meitnerioActionPerformed
 
     private void paladioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paladioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_paladioActionPerformed
 
     private void platinoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_platinoActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_platinoActionPerformed
 
     private void oroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oroActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_oroActionPerformed
 
     private void cadmioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadmioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_cadmioActionPerformed
 
     private void carbonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carbonoActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_carbonoActionPerformed
 
     private void oganessonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oganessonActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_oganessonActionPerformed
 
     private void actinioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actinioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_actinioActionPerformed
 
     private void berilioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_berilioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_berilioActionPerformed
 
     private void aluminioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aluminioActionPerformed
-        // TODO add your handling code here: 
-        int papita = 0;
+      // TODO add your handling code here: 
+      int papita = 0;
     }//GEN-LAST:event_aluminioActionPerformed
 
     private void boroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boroActionPerformed
-        Elemento elementoBoton = new Elemento();
-        for (Elemento elemento: tablaPeriodica.getElementos()) {
-            if (elemento.getSimbolo().equals(((JButton) evt.getSource()).getName())) {
-                elementoBoton = elemento;
-                System.out.println(elementoBoton.getNombre());
-                break;
-            }        
-        }  
-        try {
-            VentanaInformacion frame = new VentanaInformacion(this, elementoBoton);
-            this.setVisible(false);
-        } catch (IOException ex) {
-            Logger.getLogger(InterfazGrafica.class.getName()).log(Level.SEVERE, null, ex);
+      Elemento elementoBoton = new Elemento();
+      for (Elemento elemento : tablaPeriodica.getElementos()) {
+        if (elemento.getSimbolo().equals(((JButton) evt.getSource()).getName())) {
+          elementoBoton = elemento;
+          System.out.println(elementoBoton.getNombre());
+          break;
         }
+      }
+      try {
+        VentanaInformacion frame = new VentanaInformacion(this, elementoBoton);
+        this.setVisible(false);
+      } catch (IOException ex) {
+        Logger.getLogger(InterfazGrafica.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }//GEN-LAST:event_boroActionPerformed
 
     private void botonCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCerrarActionPerformed
-        System.exit(0);
+      System.exit(0);
     }//GEN-LAST:event_botonCerrarActionPerformed
 
     private void erbioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_erbioActionPerformed
-        // TODO add your handling code here:
+      // TODO add your handling code here:
     }//GEN-LAST:event_erbioActionPerformed
 
   private void neptunioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_neptunioActionPerformed
     // TODO add your handling code here:
   }//GEN-LAST:event_neptunioActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        
-        //</editor-fold>
+  private void temperatureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_temperatureActionPerformed
+    this.cpkColoring.setSelected(false);
+    this.icons.setSelected(false);
+    for (JButton boton : botones) {
+      boton.setForeground(Color.BLACK);
+      System.out.println(boton.getName());
+      boton.setIcon(null);
+      double temperatura = 0;
+      for (Elemento elementoTabla : tablaPeriodica.getElementos()) {
+        if (elementoTabla.getSimbolo().equals(boton.getName())) {
+          temperatura = (elementoTabla.getPuntoFusion().getTemperatura() + elementoTabla.getPuntoEbullicion().getTemperatura()) / 2;
+          break;
+        }
+      }
+      temperatura = temperatura/6000 * (16711680 - 255) + 255;
+      String hexa = Integer.toHexString((int) temperatura);
+      boton.setBackground(Color.decode("0x" + hexa));
+      }
+  }//GEN-LAST:event_temperatureActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InterfazGrafica().setVisible(true);
-            }
-        });
+  private void cpkColoringActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpkColoringActionPerformed
+    this.icons.setSelected(false);
+    this.temperature.setSelected(false);
+    for (JButton boton : botones) {
+      boton.setForeground(Color.BLACK);
+      System.out.println(boton.getName());
+      boton.setIcon(null);
+      Elemento elemento = new Elemento();
+      for (Elemento elementoTabla : tablaPeriodica.getElementos()) {
+        if (elementoTabla.getSimbolo().equals(boton.getName())) {
+          elemento = elementoTabla;
+          break;
+        }
+      }
+      if (!elemento.getColor().equals("")) {
+        boton.setBackground(Color.decode("0x" + elemento.getColor()));
+      } else {
+        boton.setBackground(Color.WHITE);
+      }
     }
+  }//GEN-LAST:event_cpkColoringActionPerformed
+
+  private void iconsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iconsActionPerformed
+    this.cpkColoring.setSelected(false);
+    this.temperature.setSelected(false);
+    for (JButton boton : botones) {
+      boton.setForeground(Color.WHITE);
+      System.out.println(boton.getName());
+      boton.setIcon(null);
+      Elemento elemento = new Elemento();
+      int indice = 0;
+      for (Elemento elementoTabla : tablaPeriodica.getElementos()) {
+        if (elementoTabla.getSimbolo().equals(boton.getName())) {
+          break;
+        }
+        indice++;
+      }
+      boton.setIcon(imagenes[indice]);
+    }
+  }//GEN-LAST:event_iconsActionPerformed
+
+  /**
+   * @param args the command line arguments
+   */
+  public static void main(String args[]) {
+    /* Set the Nimbus look and feel */
+    //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+    /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+     */
+
+    //</editor-fold>
+
+    /* Create and display the form */
+    java.awt.EventQueue.invokeLater(new Runnable() {
+      public void run() {
+        new InterfazGrafica().setVisible(true);
+      }
+    });
+  }
 
   // Variables declaration - do not modify//GEN-BEGIN:variables
   private javax.swing.JButton actinio;
@@ -2123,6 +2216,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
   private javax.swing.JButton cobalto;
   private javax.swing.JButton cobre;
   private javax.swing.JButton copernicio;
+  private javax.swing.JRadioButton cpkColoring;
   private javax.swing.JButton cromo;
   private javax.swing.JButton curio;
   private javax.swing.JButton darmstadio;
@@ -2148,6 +2242,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
   private javax.swing.JButton hidrogeno;
   private javax.swing.JButton hierro;
   private javax.swing.JButton holmio;
+  private javax.swing.JRadioButton icons;
   private javax.swing.JButton indio;
   private javax.swing.JButton iridio;
   private javax.swing.JButton iterbio;
@@ -2185,7 +2280,6 @@ public class InterfazGrafica extends javax.swing.JFrame {
   private javax.swing.JLabel jLabel24;
   private javax.swing.JLabel jLabel25;
   private javax.swing.JLabel jLabel26;
-  private javax.swing.JLabel jLabel27;
   private javax.swing.JLabel jLabel28;
   private javax.swing.JLabel jLabel29;
   private javax.swing.JLabel jLabel3;
@@ -2249,6 +2343,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
   private javax.swing.JButton tantalio;
   private javax.swing.JButton tecnecio;
   private javax.swing.JButton telurio;
+  private javax.swing.JRadioButton temperature;
   private javax.swing.JButton tennessine;
   private javax.swing.JButton terbio;
   private javax.swing.JButton titanio;

@@ -17,6 +17,11 @@ public class Temperatura {
     tipoGrado = ' ';
   }
   
+  public double getTemperatura() {
+    toKelvin();
+    return temperatura;
+  }
+  
   public Temperatura(double pTemperatura, char pTipoGrado) {
     temperatura = pTemperatura;
     tipoGrado = pTipoGrado;

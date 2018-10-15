@@ -222,33 +222,6 @@
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="titanio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="vanadio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="cromo" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="manganeso" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="hierro" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="cobalto" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="niquel" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="cobre" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="zinc" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="galio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="germanio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="arsenico" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="selenio" min="-2" pref="48" max="-2" attributes="0"/>
-                                  </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                       <Component id="jLabel4" min="-2" pref="19" max="-2" attributes="0"/>
@@ -277,6 +250,41 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="titanio" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="vanadio" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="cromo" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <Component id="manganeso" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <Component id="hierro" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <Component id="cobalto" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="niquel" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="cobre" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="zinc" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <Component id="galio" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <Component id="germanio" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                      <Component id="arsenico" min="-2" pref="48" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                      <Component id="selenio" min="-2" pref="48" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="cpkColoring" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="temperature" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="icons" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -327,11 +335,6 @@
                       <Component id="astato" min="-2" pref="48" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel19" min="-2" pref="13" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="hidrogeno" min="-2" pref="48" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jLabel24" min="-2" pref="13" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="francio" min="-2" pref="48" max="-2" attributes="0"/>
@@ -372,17 +375,36 @@
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="jLabel29" min="-2" pref="668" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel20" min="-2" pref="13" max="-2" attributes="0"/>
-                                  <Component id="jLabel21" min="-2" pref="13" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="litio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="berilio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="480" max="-2" attributes="0"/>
+                                      <Component id="jLabel19" min="-2" pref="13" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="hidrogeno" min="-2" pref="48" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Component id="jLabel20" min="-2" pref="13" max="-2" attributes="0"/>
+                                          <Component id="jLabel21" min="-2" pref="13" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="litio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="berilio" min="-2" pref="48" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="sodio" min="-2" pref="48" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+                                              <Component id="magnesio" min="-2" pref="48" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace pref="169" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
                                       <Component id="boro" min="-2" pref="48" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="carbono" min="-2" pref="48" max="-2" attributes="0"/>
@@ -392,10 +414,7 @@
                                       <Component id="oxigeno" min="-2" pref="48" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="sodio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-                                      <Component id="magnesio" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="480" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="312" max="-2" attributes="0"/>
                                       <Component id="aluminio" min="-2" pref="48" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
                                       <Component id="silicio" min="-2" pref="48" max="-2" attributes="0"/>
@@ -416,34 +435,24 @@
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                      <Component id="radon" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="oganesson" min="-2" pref="48" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="helio" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="neon" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="argon" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                              <Component id="radon" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="oganesson" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="krypton" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="xenon" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="helio" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                  <Component id="krypton" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <Component id="xenon" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Component id="neon" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                      <Component id="argon" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                              <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="251" max="32767" attributes="0"/>
@@ -524,13 +533,6 @@
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
-          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -566,26 +568,36 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="hidrogeno" min="-2" pref="36" max="-2" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel19" min="-2" pref="19" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="hidrogeno" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jLabel19" min="-2" pref="19" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="fluor" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="boro" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="carbono" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="nitrogeno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Component id="oxigeno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="cloro" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                                       <Component id="jLabel20" min="-2" pref="19" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="litio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="berilio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="boro" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="carbono" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="nitrogeno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                                      <Component id="oxigeno" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="litio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                          <Component id="berilio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -597,19 +609,21 @@
                                       <Component id="fosforo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                       <Component id="azufre" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jLabel21" min="-2" pref="19" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="fluor" min="-2" pref="36" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="cloro" min="-2" pref="36" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="icons" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cpkColoring" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="temperature" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -667,6 +681,60 @@
                               <Component id="yodo" min="-2" pref="36" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="cesio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="bario" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="lantano_salto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="hafnio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="tantalio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="wolframio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="renio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="osmio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="iridio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="platino" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="oro" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="mercurio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="talio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="plomo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="bismuto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="polonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="astato" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                      <Component id="francio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="radio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="actinio_salto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="rutherfordio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="dubnio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="seaborgio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="bohrio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="hassio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="meitnerio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="darmstadio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="roentgenio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="copernicio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="nihonium" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="flerovio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="moscovium" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                      <Component id="livermorio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="tennessine" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                              <Component id="jLabel25" min="-2" pref="19" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabel24" min="-2" pref="19" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="helio" min="-2" pref="36" max="-2" attributes="0"/>
@@ -682,62 +750,7 @@
                           </Group>
                           <Component id="krypton" min="-2" pref="36" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="cesio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="bario" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="lantano_salto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="hafnio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="tantalio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="wolframio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="renio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="osmio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="iridio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="platino" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="oro" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="mercurio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="talio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="plomo" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="bismuto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="polonio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="astato" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="francio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="radio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="actinio_salto" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="rutherfordio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="dubnio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="seaborgio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="bohrio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="hassio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="meitnerio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="darmstadio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="roentgenio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="copernicio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="nihonium" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="flerovio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="moscovium" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                              <Component id="livermorio" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="tennessine" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="jLabel25" min="-2" pref="19" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLabel24" min="-2" pref="19" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="radon" min="-2" pref="36" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="oganesson" min="-2" pref="36" max="-2" attributes="0"/>
@@ -798,13 +811,6 @@
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-          </Group>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -3271,14 +3277,6 @@
         <Property name="text" type="java.lang.String" value="Lantanides"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel27">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Dialog" size="18" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Actinides"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabel28">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -3297,6 +3295,39 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Periodic Table of the Elements"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="icons">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Icons"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="iconsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="cpkColoring">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="CPK Coloring"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpkColoringActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JRadioButton" name="temperature">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Temperature"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="temperatureActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

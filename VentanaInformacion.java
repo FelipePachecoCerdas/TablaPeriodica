@@ -10,7 +10,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import javafx.scene.layout.Border;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.JRootPane;
