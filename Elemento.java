@@ -11,28 +11,28 @@
  */
 public class Elemento {
 
-  String nombre;
-  int pesoAtomico;
-  String simbolo;
-  double masaAtomica;
-  String color;
-  String configuracionElectronica;
-  double electronegatividad;
-  int radioAtomico;
-  String radioIonico;
-  int radioVanDelWaals;
-  int energiaIonizacion;
-  int afinidadElectronica;
-  int estadosOxidacion[];
-  String estadoEstandar;
-  String tipo;
-  Temperatura puntoFusion;
-  Temperatura puntoEbullicion;
-  double densidad;
-  String nombreBloque;
-  int annoDescubrimiento;
-  String historia;
-  String[] links;
+  private String nombre;
+  private int pesoAtomico;
+  private String simbolo;
+  private double masaAtomica;
+  private String color;
+  private String configuracionElectronica;
+  private double electronegatividad;
+  private int radioAtomico;
+  private String radioIonico;
+  private int radioVanDelWaals;
+  private int energiaIonizacion;
+  private int afinidadElectronica;
+  private int estadosOxidacion[];
+  private String estadoEstandar;
+  private String tipo;
+  private Temperatura puntoFusion;
+  private Temperatura puntoEbullicion;
+  private double densidad;
+  private String nombreBloque;
+  private int annoDescubrimiento;
+  private String historia;
+  private String[] links;
   /*
   * EL contructor de la clase Elemento
   *@param pNombre,pPesoAtomico,pSimbolo,pMasaAtomica,pColor,pConfiguracionElectronica,pElectronegatividad,pRadioAtomico,pRadioIonico,pRadioVanDelWaals,pEnergiaIonizacion,pAfinidadElectronica,pEstadosOxidacion,pEstadoEstandar,pTipo,pPuntoFusion,pPuntoEbullicion,pDensidad,pNombreBloque,pAnnoDescubrimiento,pHistoria,pLinks
