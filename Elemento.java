@@ -6,7 +6,8 @@
 
 /**
  *
- * @author felip
+ * @author felipe Pachco Cerdas
+ * @author Kendall Tenorio Chevez
  */
 public class Elemento {
 
@@ -32,7 +33,10 @@ public class Elemento {
   int annoDescubrimiento;
   String historia;
   String[] links;
-
+  /*
+  * EL contructor de la clase Elemento
+  *@param pNombre,pPesoAtomico,pSimbolo,pMasaAtomica,pColor,pConfiguracionElectronica,pElectronegatividad,pRadioAtomico,pRadioIonico,pRadioVanDelWaals,pEnergiaIonizacion,pAfinidadElectronica,pEstadosOxidacion,pEstadoEstandar,pTipo,pPuntoFusion,pPuntoEbullicion,pDensidad,pNombreBloque,pAnnoDescubrimiento,pHistoria,pLinks
+  */
   public Elemento(String pNombre, int pPesoAtomico, String pSimbolo, double pMasaAtomica, String pColor, String pConfiguracionElectronica, double pElectronegatividad, int pRadioAtomico, String pRadioIonico, int pRadioVanDelWaals, int pEnergiaIonizacion, int pAfinidadElectronica, int pEstadosOxidacion[], String pEstadoEstandar, String pTipo, Temperatura pPuntoFusion, Temperatura pPuntoEbullicion, double pDensidad, String pNombreBloque, int pAnnoDescubrimiento, String pHistoria, String[] pLinks) {
     setNombre(pNombre);
     setPesoAtomico(pPesoAtomico);
@@ -62,7 +66,9 @@ public class Elemento {
   public Elemento() {
 
   }
-
+/*
+*@return devuelve toda la informacion de un elemento en especifico
+*/
   @Override
   public String toString() {
     String informacion = "Symbol: " + getSimbolo() + "\n";
